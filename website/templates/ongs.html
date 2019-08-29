@@ -1,0 +1,41 @@
+{% extends 'shared/layout.html' %}
+{% load staticfiles%}
+
+{% block conteudo %}
+
+
+<h1>Bem-Vindx ao PETISK</h1>
+{% if nome %}
+    <h1>Bem-Vindx {{nome}}</h1>
+{% else %}
+    <h1>Bem-Vindx ao PETISK</h1>
+{% endif %}
+
+    <form action="/ong/" method="post">
+        {% csrf_token %}
+        <label for="nome">nome:</label>
+        <input type="text" name="nome">
+
+        <label for="responsavel">responsavel:</label>
+        <input type="text" name="responsavel" required>
+
+        <label for="endereco">endereço:</label>
+        <input type="text" name="endereco" required>
+        
+        <label for="str_numero">numero:</label>
+        <input type="text" name="str_numero" maxlength="5" required>
+
+        <label for="complemento">complemento:</label>
+        <input type="text" name="complemento">
+
+        <label for="str_horario">horario:</label>
+        <input type="text" name="str_horario" required>
+
+        <label for="observacao">observacao:</label>
+        <input type="text" name="observacao" required>
+
+      
+         <input type="submit" value="Cadastrar">
+    </form>
+
+{% endblock %}
