@@ -46,12 +46,10 @@ def ong(request):
         ong = Ong()
         ong.nome = request.POST.get('nome')
         ong.responsavel= request.POST.get('responsavel')
-        ong.endereco= request.POST.get('endereço')
+        ong.endereco= request.POST.get('endereco')
         ong.telefone= request.POST.get('telefone')
-        ong.str_horario= request.POST.get('horário')
-        ong.str_numero= request.POST.get('número')
-        ong.complemento= request.POST.get('complemento')
-        ong.observacao= request.POST.get('observação')
+        ong.horario= request.POST.get('horario')
+        ong.observacao= request.POST.get('observacao')
         ong.save()
 
         contexto = {
@@ -62,13 +60,13 @@ def ong(request):
     return render(request, 'ongs.html') 
 
 
-def ongs(request):
+def asongs(request):
     ongs = Ong.objects.filter(ativo=True).all()
     
     contexto = {
-        'Ongs': ongs
+        'ongs': ongs
     }
-    return render(request, 'ongs.html', contexto)
+    return render(request, 'cadastrar_ongs.html', contexto)
 
 
 

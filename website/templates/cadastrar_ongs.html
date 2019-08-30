@@ -1,0 +1,13 @@
+{% extends 'shared/layout.html' %}
+{% load staticfiles %}
+
+{% block conteudo %}
+
+<h2>Bem vindo</h2>
+
+{% for ong in ongs %}
+    <p><strong>{{ong.nome}} {{ong.responsavel}}</strong></p>
+{% endfor %}
+
+{% endblock %}
+

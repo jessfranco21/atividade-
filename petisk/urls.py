@@ -20,6 +20,7 @@ from website import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('pessoas/', views.pessoas),
-    path('ong/', views.ong),
+    path('pessoas', views.pessoas),
+    path('ongs/', views.ong),
+    path('cadastrar_ongs', views.asongs),
 ]
